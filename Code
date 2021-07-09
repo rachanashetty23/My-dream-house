@@ -1,0 +1,326 @@
+#include<Windows.h>       // for MS Windows
+#include<GL\glut.h>       // GLUT, include glu.h and gl.h
+//Note: GLglut.h path depending on the system in use
+void init()
+{
+	// Set display window color to as glClearColor(R,G,B,Alpha)
+	glClearColor(0.5, 0.9, 0.4, 0.0);
+	// Set projection parameters.
+	glMatrixMode(GL_PROJECTION);
+	// Set 2D Transformation as gluOrtho2D(Min Width, Max Width, Min Height, Max Height)
+	gluOrtho2D(0.0, 800, 0.0, 600);
+}
+void home()
+{
+	
+	glClear(GL_COLOR_BUFFER_BIT);     // Clear display window
+
+	//roof
+	glColor3f(0.556863, 0.137255, 0.137255);
+	glBegin(GL_POLYGON);
+	glVertex2i(120, 480);
+	glVertex2i(330, 480);
+	glVertex2i(350, 430);
+	glVertex2i(98, 430);
+	glEnd();
+	// Top of Front Wall
+	glColor3f(1, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex2i(98, 430);
+	glVertex2i(350, 430);
+	glVertex2i(350, 350);
+	glVertex2i(98, 350);
+	glEnd();
+	// Front Wall
+	glColor3f(1, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex2i(98, 350);
+	glVertex2i(350, 350);
+	glVertex2i(350, 100);
+	glVertex2i(98, 100);
+	glEnd();
+	// Front Wall left Window
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(120, 410);
+	glVertex2i(160, 410);
+	glVertex2i(160, 360);
+	glVertex2i(120, 360);
+	glEnd();
+	// Front Wall middle window
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(170, 410);
+	glVertex2i(280, 410);
+	glVertex2i(280, 360);
+	glVertex2i(170, 360);
+	glEnd();
+	// Front wall right window
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(290, 410);
+	glVertex2i(330, 410);
+	glVertex2i(330, 360);
+	glVertex2i(290, 360);
+	glEnd();
+	// Left Window cone
+	glColor3f(0.52, 0.37, 0.36);
+	glBegin(GL_TRIANGLES);
+	glVertex2i(140, 440);
+	glVertex2i(160, 410);
+	glVertex2i(120, 410);
+	glEnd();
+	//Right window cone
+	glColor3f(0.52, 0.37, 0.36);
+	glBegin(GL_TRIANGLES);
+	glVertex2i(310, 440);
+	glVertex2i(330, 410);
+	glVertex2i(290, 410);
+	glEnd();
+	//front wall left window
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(120, 280);
+	glVertex2i(170, 280);
+	glVertex2i(170, 180);
+	glVertex2i(120, 180);
+	glEnd();
+	//front wall right window
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(280, 280);
+	glVertex2i(330, 280);
+	glVertex2i(330, 180);
+	glVertex2i(280, 180);
+	glEnd();
+    //front door
+	glColor3f(0, 0, 0);
+	glBegin(GL_POLYGON);
+	glVertex2i(180, 320);
+	glVertex2i(270, 320);
+	glVertex2i(270, 150);
+	glVertex2i(180, 150);
+	glEnd();
+	//stair number1
+	glColor3f(0.36, 0.25, 0.20);
+	glBegin(GL_POLYGON);
+	glVertex2i(180, 150);
+	glVertex2i(270, 150);
+	glVertex2i(270, 140);
+	glVertex2i(180, 140);
+	glEnd();
+	//stair number2
+	glColor3f(0.36, 0.25, 0.20);
+	glBegin(GL_POLYGON);
+	glVertex2i(170, 140);
+	glVertex2i(280, 140);
+	glVertex2i(280, 130);
+	glVertex2i(170, 130);
+	glEnd();
+	//stair number3
+	glColor3f(0.36, 0.25, 0.20);
+	glBegin(GL_POLYGON);
+	glVertex2i(160, 130);
+	glVertex2i(290, 130);
+	glVertex2i(290, 120);
+	glVertex2i(160, 120);
+	glEnd();
+	//stair number4
+	glColor3f(0.36, 0.25, 0.20);
+	glBegin(GL_POLYGON);
+	glVertex2i(150, 120);
+	glVertex2i(300, 120);
+	glVertex2i(300, 110);
+	glVertex2i(150, 110);
+	glEnd();
+	//stair number5
+	glColor3f(0.36, 0.25, 0.20);
+	glBegin(GL_POLYGON);
+	glVertex2i(140, 110);
+	glVertex2i(310, 110);
+	glVertex2i(310, 100);
+	glVertex2i(140, 100);
+	glEnd();
+	//stair line
+	glColor3f(0, 0, 0.0);
+	glBegin(GL_LINES);
+	glVertex2i(180, 140);
+	glVertex2i(270, 140);
+	glEnd();
+	//stair line
+	glColor3f(0, 0, 0);
+	glBegin(GL_LINES);
+	glVertex2i(170, 130);
+	glVertex2i(280, 130);
+	glEnd();
+	//stair line
+	glColor3f(0, 0, 0);
+	glBegin(GL_LINES);
+	glVertex2i(160, 120);
+	glVertex2i(290, 120);
+	glEnd();
+	//stair line
+	glColor3f(0, 0, 0);
+	glBegin(GL_LINES);
+	glVertex2i(150, 110);
+	glVertex2i(300, 110);
+	glEnd();
+	//stair line
+	glColor3f(0, 0, 0);
+	glBegin(GL_LINES);
+	glVertex2i(140, 100);
+	glVertex2i(310, 100);
+	glEnd();
+	//Left side
+	glColor3f(1, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex2i(55, 250);
+	glVertex2i(98, 250);
+	glVertex2i(98, 100);
+	glVertex2i(55, 100);
+	glEnd();
+	//right side
+	glColor3f(1, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex2i(350, 250);
+	glVertex2i(400, 250);
+	glVertex2i(400, 100);
+	glVertex2i(350, 100);
+	glEnd();
+	//left side cap
+	glColor3f(0.556863, 0.137255, 0.137255);
+	glBegin(GL_POLYGON);
+	glVertex2i(55, 300);
+	glVertex2i(98, 300);
+	glVertex2i(98, 250);
+	glVertex2i(45, 250);
+	glEnd();
+	//right side cap
+	glColor3f(0.556863, 0.137255, 0.137255);
+	glBegin(GL_POLYGON);
+	glVertex2i(350, 300);
+	glVertex2i(390, 300);
+	glVertex2i(410, 250);
+	glVertex2i(350, 250);
+	glEnd();
+	//left side box
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(90,220);
+	glVertex2i(60, 220);
+	glVertex2i(60, 190);
+	glVertex2i(90, 190);
+	glEnd();
+	//right side box
+	glColor3f(0.80, 0.80, 0.80);
+	glBegin(GL_POLYGON);
+	glVertex2i(360, 220);
+	glVertex2i(390, 220);
+	glVertex2i(390, 190);
+	glVertex2i(360, 190);
+	glEnd();
+	//upper window line side
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(120, 385);
+	glVertex2i(160, 385);
+	glEnd();
+	//upper window line down
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(140, 410);
+	glVertex2i(140, 360);
+	glEnd();
+	//upper window line side
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(120, 410);
+	glVertex2i(160, 410);
+	glEnd();
+	//upper right window line side
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(290, 385);
+	glVertex2i(330, 385);
+	glEnd();
+	//upper right window line up
+	
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(310, 410);
+	glVertex2i(310, 360);
+	glEnd();
+	//upper right window side
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(290, 410);
+	glVertex2i(330, 410);
+	glEnd();
+	//middle window line side
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(170, 385);
+	glVertex2i(280, 385);
+	glEnd();
+	//middle window line up
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(225, 410);
+	glVertex2i(225, 360);
+	glEnd();
+	//front wall window line
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(120, 230);
+	glVertex2i(170, 230);
+	glEnd();
+	//front wall window line right
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(280, 230);
+	glVertex2i(330, 230);
+	glEnd();
+	//front wall window line up
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(145, 280);
+	glVertex2i(145, 180);
+	glEnd();
+	//front wall window line up right
+	glColor3f(0.52, 0.37, 0.26);
+	glBegin(GL_LINES);
+	glVertex2i(305, 280);
+	glVertex2i(305, 180);
+	glEnd();
+	//door knob
+	glColor3f(0.5, 0.1, 0.0);
+	glBegin(GL_POLYGON);
+	glVertex2i(250, 250);
+	glVertex2i(260, 250);
+	glVertex2i(260, 220);
+	glVertex2i(250, 220);
+	glEnd();
+
+	
+	// Process all OpenGL routine s as quickly as possible
+	glFlush();
+}
+int main(int argc, char ** argv)
+{
+	// Initialize GLUT
+	glutInit(&argc, argv);
+	// Set display mode
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	// Set top - left display window position.
+	glutInitWindowPosition(100, 100);
+	// Set display window width and height
+	glutInitWindowSize(800, 600);
+	// Create display window with the given title
+	glutCreateWindow("Rachana's dream house ");
+	// Execute initialization procedure
+	init();
+	// Send graphics to display window
+	glutDisplayFunc(home);
+	// Display everything and wait.
+	glutMainLoop();
+}
